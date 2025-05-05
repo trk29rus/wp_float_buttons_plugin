@@ -40,10 +40,8 @@ add_action( 'wp_enqueue_scripts', 'buttons_style', 10);
 
 // скрипты админки
 
-function admin_script() {
-   // if(is_admin()) {
-	wp_enqueue_script( 'script',  plugin_dir_url(__FILE__). '/assets/js/tabs.js', array('jquery'), '3.0' );
-  //}	
+function admin_script() {  
+	wp_enqueue_script( 'script',  plugin_dir_url(__FILE__). '/assets/js/tabs.js', array('jquery'), '3.0' ); 
 }
 add_action( 'admin_enqueue_scripts', 'admin_script', 10);
 
