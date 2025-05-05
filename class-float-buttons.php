@@ -260,10 +260,10 @@ $option['artweb_mail_field'] ? $mail_btn = '<div class="float_button mail" style
 $buttons  = '<div class="float_buttons" style="'.$option['show_position'].':'.$option['range_border_position'].'px!important; bottom:'.$option['range_bottom_position'].'px!important">';
 $buttons .= '<div class="hide_buttons" style="display:none">';
 $buttons .= $phone_btn;
-$buttons .=	$whatsapp_btn;
-$buttons .=	$telegram_btn;
-$buttons .=	$mail_btn;
-$buttons .=	$vk_btn;
+$buttons .= $whatsapp_btn;
+$buttons .= $telegram_btn;
+$buttons .= $mail_btn;
+$buttons .= $vk_btn;
 $buttons .= '</div>';
 $buttons .= '<div class="main_button" data-tooltip="'.$option['tooltip'].'" data-position="'.$option['show_position'].'">
    <button class="pulse-button" style="background:'.$option['artweb_main_button_color'].'"> 
