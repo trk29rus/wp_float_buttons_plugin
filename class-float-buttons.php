@@ -183,11 +183,11 @@ public function float_buttons_fields_init() {
          $value[1],
         'buttons_setting',
         'buttons_setting_section',
-        array( 
-			'fun_name' => $key, 
-		)
-    ); 
-  }
+         array ( 
+	     'fun_name' => $key, 
+	)
+     ); 
+   }
 }
 	
 // цвета
@@ -198,12 +198,12 @@ public function float_buttons_colors() {
 add_settings_section(
         'buttons_colors_section',
         __( 'Дизайн и цвета', 'wordpress' ),
-        array($this),
-        'buttons_setting',
-		array(
-		'before_section' => '<div class="section colors">',
-        'after_section' => '</div>'
-		)
+        array ($this),
+         'buttons_setting',
+	array (
+	 'before_section' => '<div class="section colors">',
+         'after_section' => '</div>'
+	)
     );
     
  // добавляем поля 
@@ -225,9 +225,9 @@ add_settings_section(
          $value[1],
         'buttons_setting',
         'buttons_colors_section',
-        array( 
-			'fun_name' => $key, 
-		)
+         array ( 
+	    'fun_name' => $key, 
+      )
     ); 
   }
 }
