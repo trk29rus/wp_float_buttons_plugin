@@ -2,10 +2,10 @@ jQuery(document).ready(function($) {
 let button = $('.main_button');
 let buttons = $('.float_button');
 let attr = button.attr('data-tooltip');
-let show_attr = button.attr('data-position');
+let position = button.attr('data-position');
 
 if(attr.length > 0) {
-  switch(show_attr) {
+  switch(position) {
     case 'right':
         button.addClass('show_tooltip');
         break;
@@ -23,15 +23,5 @@ else {
 
 button.click(function(){
   $('.hide_buttons, .comment_icon, .close_icon').toggle(200);
-/*if(attr.length > 0) {
-    switch(show_attr) {
-    case 'right':
-        $(this).toggleClass('show_tooltip');
-        break;
-    case 'left':
-        $(this).toggleClass('show_tooltip_left');
-        break;
-       } 
-     }*/
   })
 })
