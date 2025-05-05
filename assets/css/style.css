@@ -254,7 +254,7 @@ button {
     position:relative
 }
 
-@keyfarames pulse{
+@keyframes pulse{
 0% {
     opacity: 1;
     transform: scale(0.9, 0.9);
