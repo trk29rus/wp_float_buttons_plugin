@@ -207,9 +207,9 @@ add_settings_section(
  // добавляем поля 
  
    $colors_fields = [
+	'artweb_main_button_color'=>['Цвет главной кнопки','render_input_color'], 
         'artweb_phone_field_color'=>['Цвет кнопки телефона','render_input_color'],
-        'artweb_mail_field_color'=>['Цвет кнопки Email','render_input_color'],
-        'artweb_main_button_color'=>['Цвет главной кнопки','render_input_color'],
+        'artweb_mail_field_color'=>['Цвет кнопки Email','render_input_color'],     
         'tooltip'=>['Подсказка у кнопки','render_textarea'],
         'show_position'=>['Позиция кнопки','show_position_render'],
         'range_border_position'=>['Отступ от края страницы','range_border_position_render'],
