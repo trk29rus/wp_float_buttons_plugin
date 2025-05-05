@@ -25,7 +25,7 @@ public function __construct() {
 
 function plugin_activate(){ 
     register_activation_hook( __FILE__, 'plugin_activate' );
-	deactivate_plugins( 'my_plugin/plugin.php' );
+	deactivate_plugins( 'wp_float_buttons/plugin.php' );
 }
 
 // страница плагина
@@ -138,8 +138,7 @@ register_setting( 'buttons_setting', 'float_buttons_settings' );
 // секция настроек	
     add_settings_section(
         'buttons_setting_section',
-        __( 'Кнопки связи', 'wordpress' ),
-        //array($this, 'section_callback'), // функции, можно добавить несколько
+        __( 'Кнопки связи', 'wordpress' ),     
          array($this),
           'buttons_setting',
 	 array(
