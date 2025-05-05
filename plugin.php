@@ -1,9 +1,8 @@
 <?php
 /*
- * Plugin Name: Плавающие кнопки связи
- * Plugin URI: 
+ * Plugin Name: Плавающие кнопки связи  
  * Description: Кнопки связи для сайта (ватсап, вк и пр.)
- * Version: 1.1.1
+ * Version: 1.1
  * Author: Artyom
  * Author URI: https://artweb29.ru
  * License: GPLv2 or later
