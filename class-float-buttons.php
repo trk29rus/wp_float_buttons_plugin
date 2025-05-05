@@ -11,17 +11,17 @@ public function __construct() {
         add_action( 'admin_menu', array( $this, 'register_plugin_page') );	
         // Добавление кнопок        
         add_action( 'admin_init', array( $this,'float_buttons_settings_init') );	    
-	    // Добавление цветов	  
+	// Добавление цветов	  
         add_action( 'admin_init', array( $this,'float_buttons_colors') );		
-	    // Добавление полей
-	    add_action( 'admin_init', array( $this,'float_buttons_fields_init') );		
+	// Добавление полей
+	add_action( 'admin_init', array( $this,'float_buttons_fields_init') );		
         // Отображения полей       
         add_action( 'admin_init', array( $this, 'fields_display') );		
         // вывод модуля на фронте
         add_action( 'wp_footer', array( $this,'float_buttons'));
         // шорткод
         add_shortcode('float_buttons', array( $this,'float_buttons'));  
-    }
+}
 
 function plugin_activate(){ 
     register_activation_hook( __FILE__, 'plugin_activate' );
@@ -55,7 +55,7 @@ function render_textarea($args) {
     ?>
     <textarea name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'><?php echo $options[$value]; ?></textarea>
     <?php 
-    }
+}
 
 // добавление полей input text
 
@@ -65,7 +65,7 @@ function render_input_text($args) {
     ?>
     <input type="text" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
     <?php 
-    } 
+} 
     
 // добавление полей input color
 
@@ -75,7 +75,7 @@ function render_input_color($args) {
     ?>
     <input type="color" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
     <?php 
-    }  
+}  
 
 // поле позиция показа
 
@@ -88,7 +88,7 @@ function show_position_render( ) {
     <label for = "left">Слева</label>
     <input type='radio' id='left' name='float_buttons_settings[show_position]' <?php checked( $options['show_position'], left ); ?> value='left'>
     <?php
-  }
+}
   
 // поле отступ от боковой границы сайта
 
@@ -98,7 +98,7 @@ function range_border_position_render( ) {
     <div id="value_range" class="range"><?php echo $options['range_border_position']; ?> px</div>
     <input type='range' step="1"  min='0' max='150'  id="range_border_position" name='float_buttons_settings[range_border_position]' value='<?php echo $options['range_border_position']; ?>'>
     <?php
-  } 
+} 
   
 // поле отступ от нижней границы сайта
 
