@@ -121,8 +121,7 @@ public function admin_settings_page( ) {
 		    <a href="#" class="nav-tab" id="colors">Дизайн</a>
 		  </nav>';
     ?>
-    <form action='options.php' method='post'>
-        <!--<h2>Плавающие кнопки связи</h2>-->
+    <form action='options.php' method='post'>       
         <?php
         settings_fields( 'buttons_setting' );
         do_settings_sections( 'buttons_setting' );
@@ -142,11 +141,11 @@ register_setting( 'buttons_setting', 'float_buttons_settings' );
         __( 'Кнопки связи', 'wordpress' ),
         //array($this, 'section_callback'), // функции, можно добавить несколько
          array($this),
-        'buttons_setting',
-		array(
-		'before_section' => '<div class="section settings">',
-        'after_section' => '</div>'
-		)
+          'buttons_setting',
+	 array(
+	  'before_section' => '<div class="section settings">',
+          'after_section' => '</div>'
+	)
     );
 }
 
@@ -156,15 +155,15 @@ public function float_buttons_fields_init() {
     add_settings_section(
         'artweb_section',
         'Шорткод',
-       array($this, 'shortcode_callback'),
-        'buttons_setting',
-	   array(
-		'before_section' => '<div class="shortcode-section">',
-        'after_section' => '</div>'
-		)
+        array ($this, 'shortcode_callback'),
+         'buttons_setting',
+	array (
+	 'before_section' => '<div class="shortcode-section">',
+         'after_section' => '</div>'
+	)
     );
    
-    $fields = [
+$fields = [
         'artweb_switch_button'=>['Включить модуль','artweb_switch_button_render'],
         'artweb_phone_field'=>['Телефон','render_input_text'],
         'artweb_mail_field'=>['Email','render_input_text'],
