@@ -47,92 +47,37 @@ function artweb_switch_button_render( ) {
     <?php
 }
 
-function artweb_pages_id_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <textarea name='float_buttons_settings[artweb_pages_id]' value='<?php echo $options['artweb_pages_id']; ?>'><?php echo $options['artweb_pages_id']; ?></textarea>
-    <?php
-}
-	
-function tooltip_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <textarea name='float_buttons_settings[tooltip]' value='<?php echo $options['tooltip']; ?>'><?php echo $options['tooltip']; ?></textarea>
-    <?php
-}	
+// добавление полей textarea
 
-function artweb_phone_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
+function render_textarea($args) {
+     $options = get_option( 'float_buttons_settings' );
+     $value = $args[ 'fun_name' ] ;
     ?>
-    <input type='text' name='float_buttons_settings[artweb_phone_field]' value='<?php echo $options['artweb_phone_field']; ?>'>
-    <?php
-}
+    <textarea name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'><?php echo $options[$value]; ?></textarea>
+    <?php 
+    }
 
-function artweb_vk_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
+// добавление полей input text
+
+function render_input_text($args) {
+     $options = get_option( 'float_buttons_settings' );
+     $value = $args[ 'fun_name' ] ;
     ?>
-    <input type='text' name='float_buttons_settings[artweb_vk_field]' value='<?php echo $options['artweb_vk_field']; ?>'>
-    <?php
-}
+    <input type="text" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
+    <?php 
+    } 
+    
+// добавление полей input color
 
-function artweb_shortcode_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
+function render_input_color($args) {
+     $options = get_option( 'float_buttons_settings' );
+     $value = $args[ 'fun_name' ] ;
     ?>
-    <input type='text' name='float_buttons_settings[artweb_shortcode_field]' value='<?php echo $options['artweb_shortcode_field']; ?>'>
-    <?php
-}
+    <input type="color" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
+    <?php 
+    }  
 
-function artweb_shortcode_button_color_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='color' name='float_buttons_settings[artweb_shortcode_button_color]' value='<?php echo $options['artweb_shortcode_button_color']; ?>'>
-    <?php
-}
-
-function artweb_phone_field_color_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='color' name='float_buttons_settings[artweb_phone_field_color]' value='<?php echo $options['artweb_phone_field_color']; ?>'>
-    <?php
-}
-
-function artweb_mail_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='text' name='float_buttons_settings[artweb_mail_field]' value='<?php echo $options['artweb_mail_field']; ?>'>
-    <?php
-}
-
-function artweb_mail_field_color_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='color' name='float_buttons_settings[artweb_mail_field_color]' value='<?php echo $options['artweb_mail_field_color']; ?>'>
-    <?php
-}
-
-function artweb_whatsapp_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='text' name='float_buttons_settings[artweb_whatsapp_field]' value='<?php echo $options['artweb_whatsapp_field']; ?>'>
-    <?php
-}
-
-function artweb_telegram_field_render( ) {
-    $options = get_option( 'float_buttons_settings' );
-    ?>
-    <input type='text' name='float_buttons_settings[artweb_telegram_field]' value='<?php echo $options['artweb_telegram_field']; ?>'>
-    <?php
-}
-
-function artweb_main_button_color_render( ) { 
-    $options = get_option( 'float_buttons_settings' );
-    ?> 
-    <input type='color' name='float_buttons_settings[artweb_main_button_color]' value='<?php echo $options['artweb_main_button_color']; ?>'>
-    <?php
-  }
-  
-
-// позиция показа
+// поле позиция показа
 
 function show_position_render( ) { 
     $options = get_option( 'float_buttons_settings' );
@@ -145,33 +90,22 @@ function show_position_render( ) {
     <?php
   }
   
-// отступ от боковой границы сайта
+// поле отступ от боковой границы сайта
 
 function range_border_position_render( ) { 
     $options = get_option( 'float_buttons_settings' );
     ?>
-    <div id="value_range" style="padding: 4px;
-    border: 1px solid;
-    max-width: 50px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    background: #fff;
-    text-align: center;"><?php echo $options['range_border_position']; ?> px</div>
+    <div id="value_range" class="range"><?php echo $options['range_border_position']; ?> px</div>
     <input type='range' step="1"  min='0' max='150'  id="range_border_position" name='float_buttons_settings[range_border_position]' value='<?php echo $options['range_border_position']; ?>'>
     <?php
-  }  
-  // отступ от нижней границы сайта
+  } 
+  
+// поле отступ от нижней границы сайта
 
 function range_bottom_position_render( ) { 
     $options = get_option( 'float_buttons_settings' );
     ?>
-    <div id="value_bottom_range" style="padding: 4px;
-    border: 1px solid;
-    max-width: 50px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    background: #fff;
-    text-align: center;"><?php echo $options['range_bottom_position'] ?> px</div>
+    <div id="value_bottom_range" class="range"><?php echo $options['range_bottom_position'] ?> px</div>
     <input type='range' step="1"  min='0' max='150'  id="range_bottom_position" name='float_buttons_settings[range_bottom_position]' value='<?php echo $options['range_bottom_position']; ?>'>
     <?php
    }
@@ -229,16 +163,15 @@ public function float_buttons_fields_init() {
         'after_section' => '</div>'
 		)
     );
-    
-  
+   
     $fields = [
         'artweb_switch_button'=>['Включить модуль','artweb_switch_button_render'],
-        'artweb_phone_field'=>['Телефон','artweb_phone_field_render'],
-        'artweb_mail_field'=>['Email','artweb_mail_field_render'],
-        'artweb_telegram_field'=>['Телеграм','artweb_telegram_field_render'],
-        'artweb_whatsapp_field'=>['Whatsapp','artweb_whatsapp_field_render'],
-        'artweb_vk_field'=>['Вконтакте','artweb_vk_field_render'],
-        'artweb_pages_id'=>['Введите через запятую id страниц, где кнопку нужно скрыть','artweb_pages_id_render']
+        'artweb_phone_field'=>['Телефон','render_input_text'],
+        'artweb_mail_field'=>['Email','render_input_text'],
+        'artweb_telegram_field'=>['Телеграм','render_input_text'],
+        'artweb_whatsapp_field'=>['Whatsapp','render_input_text'],
+        'artweb_vk_field'=>['Вконтакте','render_input_text'],
+        'artweb_pages_id'=>['Введите через запятую id страниц, где кнопку нужно скрыть','render_textarea']
         ];
         
      // добавляем поля 
@@ -249,7 +182,10 @@ public function float_buttons_fields_init() {
          $value[0],
          $value[1],
         'buttons_setting',
-        'buttons_setting_section'		
+        'buttons_setting_section',
+        array( 
+			'fun_name' => $key, 
+		)
     ); 
   }
 }
@@ -273,10 +209,10 @@ add_settings_section(
  // добавляем поля 
  
    $colors_fields = [
-        'artweb_phone_field_color'=>['Цвет кнопки телефона','artweb_phone_field_color_render'],
-        'artweb_mail_field_color'=>['Цвет кнопки Email','artweb_mail_field_color_render'],
-        'artweb_main_button_color'=>['Цвет главной кнопки','artweb_main_button_color_render'],
-        'tooltip'=>['Подсказка у кнопки','tooltip_render'],
+        'artweb_phone_field_color'=>['Цвет кнопки телефона','render_input_color'],
+        'artweb_mail_field_color'=>['Цвет кнопки Email','render_input_color'],
+        'artweb_main_button_color'=>['Цвет главной кнопки','render_input_color'],
+        'tooltip'=>['Подсказка у кнопки','render_textarea'],
         'show_position'=>['Позиция кнопки','show_position_render'],
         'range_border_position'=>['Отступ от края страницы','range_border_position_render'],
         'range_bottom_position'=>['Отступ от низа страницы','range_bottom_position_render'],
@@ -288,7 +224,10 @@ add_settings_section(
          $value[0],
          $value[1],
         'buttons_setting',
-        'buttons_colors_section'		
+        'buttons_colors_section',
+        array( 
+			'fun_name' => $key, 
+		)
     ); 
   }
 }
