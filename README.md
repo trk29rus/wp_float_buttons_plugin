@@ -1,1 +1,1 @@
-# wp_float_buttons_plugin
+Для работы нужна библиотека jquery
