@@ -36,14 +36,15 @@ function register_plugin_page(){
 
 public function fields_display() {
 
+// кнопка вкл/выкл
+	
 function artweb_switch_button_render( ) {
     $options = get_option( 'float_buttons_settings' );
-    ?> 
-    <div class="tab_content" id="tab_1">
-        <select name='float_buttons_settings[artweb_switch_button]'>
-        <option value='1' <?php selected( $options['artweb_switch_button'], 1 ); ?>>Включено</option>
-        <option value='2' <?php selected( $options['artweb_switch_button'], 2 ); ?>>Выключено</option>
-    </select>
+    ?>   
+      <select name='float_buttons_settings[artweb_switch_button]'>
+         <option value='1' <?php selected( $options['artweb_switch_button'], 1 ); ?>>Включено</option>
+         <option value='2' <?php selected( $options['artweb_switch_button'], 2 ); ?>>Выключено</option>
+      </select>
     <?php
 }
 
@@ -51,7 +52,7 @@ function artweb_switch_button_render( ) {
 
 function render_textarea($args) {
      $options = get_option( 'float_buttons_settings' );
-     $value = $args[ 'fun_name' ] ;
+     $value = $args[ 'function_name' ] ;
     ?>
     <textarea name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'><?php echo $options[$value]; ?></textarea>
     <?php 
@@ -61,7 +62,7 @@ function render_textarea($args) {
 
 function render_input_text($args) {
      $options = get_option( 'float_buttons_settings' );
-     $value = $args[ 'fun_name' ] ;
+     $value = $args[ 'function_name' ] ;
     ?>
     <input type="text" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
     <?php 
@@ -71,7 +72,7 @@ function render_input_text($args) {
 
 function render_input_color($args) {
      $options = get_option( 'float_buttons_settings' );
-     $value = $args[ 'fun_name' ] ;
+     $value = $args[ 'function_name' ] ;
     ?>
     <input type="color" name='float_buttons_settings[<?php echo $value; ?>]' value='<?php echo $options[$value]; ?>'>
     <?php 
@@ -182,7 +183,7 @@ $fields = [
         'buttons_setting',
         'buttons_setting_section',
          array ( 
-	     'fun_name' => $key, 
+	     'function_name' => $key, 
 	)
      ); 
    }
@@ -224,7 +225,7 @@ add_settings_section(
         'buttons_setting',
         'buttons_colors_section',
          array ( 
-	    'fun_name' => $key, 
+	    'function_name' => $key, 
       )
     ); 
   }
